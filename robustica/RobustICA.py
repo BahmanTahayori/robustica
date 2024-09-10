@@ -13,7 +13,6 @@ from sklearn.metrics import silhouette_samples
 from joblib import Parallel, delayed
 from tqdm import tqdm
 from sklearn.cluster import *
-from sklearn_extra.cluster import *
 import time
 
 
@@ -401,10 +400,7 @@ class RobustICA:
             "MiniBatchKMeans": {"n_clusters": self.n_components},
             "MeanShift": {},
             "OPTICS": {"min_samples": int(self.robust_runs * 0.5)},
-            "SpectralClustering": {"n_clusters": self.n_components},
-            # sklearn_extra
-            "KMedoids": {"n_clusters": self.n_components},
-            "CommonNNClustering": {"min_samples": int(self.robust_runs * 0.5)},
+            "SpectralClustering": {"n_clusters": self.n_components},           
         }
         if (isinstance(self.robust_method, str)) & (
             not any(
