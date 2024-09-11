@@ -15,7 +15,6 @@ setup(
         "pandas",
         "scipy",
         "scikit-learn",
-        "scikit-learn-extra",
         "joblib",
         "tqdm",
     ],
